@@ -77,8 +77,5 @@ Plug 'mhartington/oceanic-next'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" vimagit
-Plug 'jreybert/vimagit'
-
 " Initialize plugin system
 call plug#end()
