@@ -62,3 +62,6 @@ vnoremap <leader>p "_dP
 " nmap <leader>f  <Plug>(coc-format-selected)
 vmap <leader>f  :CocCommand prettier.formatFile<CR>
 nmap <leader>f  :CocCommand prettier.formatFile<CR>
+
+" <leader>f to quit
+map <leader>q :q<CR>
