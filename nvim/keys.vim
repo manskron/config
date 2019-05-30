@@ -71,3 +71,19 @@ nmap <leader>/ :vsp<CR>
 
 " - to generate new vertical split
 nmap <leader>- :sp<CR>
+
+" ============================================================================ "
+" ===                             MYSPACEVIM                               === "
+" ============================================================================ "
+
+" <leader>fs to save file
+map <leader>fs :w<CR>
+
+" <leader>bd to close buffer
+map <leader>bd :bd<CR>
+
+" <leader> bb to show open buffers
+map <leader>bb :Denite buffer -split=floating<CR>
+
+" <leader>, to fuzzy find in project
+nmap <leader><space> :Denite file/rec -split=floating<CR>  
