@@ -65,3 +65,9 @@ nmap <leader>f  :CocCommand prettier.formatFile<CR>
 
 " <leader>f to quit
 map <leader>q :q<CR>
+
+" / to generate new vertical split
+nmap <leader>/ :vsp<CR>
+
+" - to generate new vertical split
+nmap <leader>- :sp<CR>

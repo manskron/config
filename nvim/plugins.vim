@@ -70,12 +70,17 @@ Plug 'othree/yajs.vim'
 " File explorer
 Plug 'scrooloose/nerdtree'
 
-" Colorscheme
+" Colorschemes
 Plug 'mhartington/oceanic-next'
+Plug 'xero/blaquemagick.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Insert brackets
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()

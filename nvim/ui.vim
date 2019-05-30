@@ -2,19 +2,12 @@
 " ===                                UI                                    === "
 " ============================================================================ "
 
-" Enable true color support
-set termguicolors
-
 " Editor theme
-set background=dark
 try
-  colorscheme OceanicNext
+  colorscheme nord
 catch
   colorscheme slate
 endtry
-
-" Vim airline theme
-" let g:airline_theme='space'
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -61,14 +54,25 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
 hi! NERDTreeCWD guifg=#99c794
 
 " Make background color transparent for git changes
-hi! SignifySignAdd guibg=NONE
-hi! SignifySignDelete guibg=NONE
-hi! SignifySignChange guibg=NONE
+hi! SignifySignAdd guibg=#000000
+hi! SignifySignDelete guibg=#000000
+hi! SignifySignChange guibg=#000000
 
 " Highlight git change signs
 hi! SignifySignAdd guifg=#99c794
 hi! SignifySignDelete guifg=#ec5f67
 hi! SignifySignChange guifg=#c594c5
+
+"  Keeps git gutter clear
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green ctermbg=0
+highlight GitGutterChange ctermfg=yellow ctermbg=0
+highlight GitGutterDelete ctermfg=red ctermbg=0
+highlight GitGutterChangeDelete ctermfg=red ctermbg=0
+hi EndOfBuffer  term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
+hi SpellBad     term=NONE cterm=NONE ctermfg=103  ctermbg=NONE
+hi SpellCap     term=NONE cterm=NONE ctermfg=66   ctermbg=NONE
+hi Whitespace   term=NONE cterm=NONE ctermfg=234  ctermbg=235
 
 " Call method on window enter
 augroup WindowManagement
