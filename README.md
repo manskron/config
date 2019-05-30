@@ -1,3 +1,5 @@
-# Neovim and other `~/.config` related stuff
+# Neovim and other `~/.config`
 
-Neovim config is set up to work well with javascript/react development, and mimic the keybindings I like in Spacemacs.
+My Neovim config is set up to work well with javascript/react development, and mimic the keybindings I like in Spacemacs.
+
+![:q](https://i.imgur.com/pceqFyd.gif)
