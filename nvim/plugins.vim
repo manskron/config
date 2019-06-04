@@ -1,5 +1,5 @@
 " ============================================================================ "
-" ===                               PLUGINS                                === "
+" ===                          🧩  PLUGINS 🧩                                === "
 " ============================================================================ "
 
 " check whether vim-plug is installed and install it if necessary
@@ -57,6 +57,9 @@ Plug 'tpope/vim-fugitive'
 
 " ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
+
+" Improved Javascript Highlighting
+Plug 'pangloss/vim-javascript'
 
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'

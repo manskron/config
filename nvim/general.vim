@@ -3,9 +3,6 @@
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
 
-" Remap leader key to ,
-let g:mapleader=' '
-
 " Enconding!
 set encoding=utf8
 
@@ -40,6 +37,9 @@ set noruler
 
 " Only one line for command line
 set cmdheight=1
+
+" Persistent undo
+set undofile
 
 " === Completion Settings === "
 
