@@ -8,6 +8,9 @@
 `<ctrl>+e` scrolls down, while keeping cursor on line (accepts a count.)
 `<ctrl>+y` scrolls up, while keeping cursor on line(accepts a count.)
 
+`<ctrl>+o` / `<ctrl>+i` cycles back/forward through :jumps.
+`g;` `g,` cycles back/forward through :changes.
+
 ---
 
 Search can be chained after `c`.
@@ -19,3 +22,8 @@ I can do `c/snakes<CR>`
 This also works backward with `?`.
 
 ---
+
+### Commands
+
+Using `:r`, we can insert the output of whatever command we run.
+Example: `:r !ls` will give us the output of the ´ls` command.
