@@ -77,6 +77,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhartington/oceanic-next'
 Plug 'xero/blaquemagick.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'jaredgorski/SpaceCamp'
+Plug 'ntk148v/vim-horizon'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'

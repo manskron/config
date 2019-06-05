@@ -4,7 +4,7 @@
 
 " Editor theme
 try
-  colorscheme nord
+  colorscheme horizon
 catch
   colorscheme slate
 endtry
