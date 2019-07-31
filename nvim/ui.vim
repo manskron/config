@@ -4,7 +4,7 @@
 
 " Editor theme
 try
-  colorscheme horizon
+  colorscheme gruvbox
 catch
   colorscheme slate
 endtry

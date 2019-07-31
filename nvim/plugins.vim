@@ -79,6 +79,7 @@ Plug 'xero/blaquemagick.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'jaredgorski/SpaceCamp'
 Plug 'ntk148v/vim-horizon'
+Plug 'morhetz/gruvbox'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
