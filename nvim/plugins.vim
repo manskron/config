@@ -56,7 +56,7 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " ReactJS JSX syntax highlighting
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Improved Javascript Highlighting
 Plug 'pangloss/vim-javascript'
@@ -87,6 +87,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Insert brackets
 Plug 'jiangmiao/auto-pairs'
+
+" ======= RUST ======= "
+Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 call plug#end()

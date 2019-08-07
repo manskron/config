@@ -27,6 +27,8 @@ map <leader>fs :w<CR>
 " <leader>bd to close buffer
 map <leader>bd :bd<CR>
 
+" <leader>rc to source init.vim
+map <leader>rc :source ~/config/nvim/init.vim<CR>
 
 " ====================== "
 " ===  Plugin Keys   === "

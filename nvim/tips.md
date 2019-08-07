@@ -23,6 +23,9 @@ This also works backward with `?`.
 
 ---
 
+`ZZ` to close pane and save file.
+`ZQ` to close pane without saving file.
+
 ### Commands
 
 Using `:r`, we can insert the output of whatever command we run.
