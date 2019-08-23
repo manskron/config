@@ -30,6 +30,8 @@ map <leader>bd :bd<CR>
 " <leader>rc to source init.vim
 map <leader>rc :source ~/config/nvim/init.vim<CR>
 
+map <leader>l <Plug>(jsdoc)
+
 " ====================== "
 " ===  Plugin Keys   === "
 " ======================="
@@ -69,4 +71,13 @@ map <leader>h :%s///<left><left>
 " === Easy-motion shortcuts ==="
 "   <leader>w - Easy-motion highlights first word letters bi-directionally
 map <leader>w <Plug>(easymotion-bd-w)
+
+
+" === Tabs ==="
+nnoremap <leader>tc :tabnew<CR>
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprevious<CR>
+
+" === Zen mode === "
+map <leader>z :Goyo<CR>
 

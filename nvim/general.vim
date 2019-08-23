@@ -6,6 +6,9 @@
 " Enconding!
 set encoding=utf8
 
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+set splitbelow splitright
+
 " Don't show last command
 set noshowcmd
 
