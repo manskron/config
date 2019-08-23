@@ -1,12 +1,13 @@
+
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
 
-" Remap leader key to ,
-let g:mapleader=','
-
 " Enconding!
 set encoding=utf8
+
+" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+set splitbelow splitright
 
 " Don't show last command
 set noshowcmd
@@ -40,8 +41,15 @@ set noruler
 " Only one line for command line
 set cmdheight=1
 
+" Persistent undo
+set undofile
+
 " === Completion Settings === "
 
 " Don't give completion messages like 'match 1 of 2'
 " or 'The only match'
 set shortmess+=c
+
+" Enable project specific configs
+set exrc
+set secure

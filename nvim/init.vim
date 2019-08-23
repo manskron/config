@@ -4,6 +4,7 @@ source ~/.config/nvim/general.vim
 source ~/.config/nvim/plugin-conf.vim
 source ~/.config/nvim/ui.vim
 source ~/.config/nvim/keys.vim
+source ~/.config/nvim/modsmacs.vim
 
 " ============================================================================ "
 " ===                                 MISC.                                === "

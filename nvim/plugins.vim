@@ -1,5 +1,5 @@
 " ============================================================================ "
-" ===                               PLUGINS                                === "
+" ===                          🧩  PLUGINS 🧩                                === "
 " ============================================================================ "
 
 " check whether vim-plug is installed and install it if necessary
@@ -50,13 +50,22 @@ Plug 'Shougo/neosnippet-snippets'
 " Print function signatures in echo area
 Plug 'Shougo/echodoc.vim'
 
+" Vim Surrounds
+Plug 'tpope/vim-surround'
+
 " === Git Plugins === "
 " Enable git changes to be shown in sign column
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " ReactJS JSX syntax highlighting
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
+
+" JSDoc
+Plug 'heavenshell/vim-jsdoc'
+
+" Improved Javascript Highlighting
+Plug 'pangloss/vim-javascript'
 
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
@@ -74,6 +83,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhartington/oceanic-next'
 Plug 'xero/blaquemagick.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'jaredgorski/SpaceCamp'
+Plug 'ntk148v/vim-horizon'
+Plug 'morhetz/gruvbox'
+Plug 'cocopon/iceberg.vim/'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
@@ -81,6 +94,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Insert brackets
 Plug 'jiangmiao/auto-pairs'
+
+" Goyo distraction free writing
+Plug 'junegunn/goyo.vim'
+
+" ======= RUST ======= "
+Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 call plug#end()

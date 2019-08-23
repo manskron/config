@@ -6,5 +6,7 @@
   "prettier.eslintIntegration": true,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "typescript.suggestionActions.enabled": false,
+  "typescript.validate.enable": false
 }
