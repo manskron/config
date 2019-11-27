@@ -11,7 +11,7 @@ try
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git', '--glob', '!src_old/'])
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git', '--glob', '!src_old/', '--glob', '!package.json'])
 
 " Use ripgrep in place of "grep"
 call denite#custom#var('grep', 'command', ['rg'])

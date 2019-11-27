@@ -2,12 +2,11 @@
 " ===                                UI                                    === "
 " ============================================================================ "
 
+
 " Editor theme
-try
-  colorscheme horizon
-catch
-  colorscheme slate
-endtry
+" set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced

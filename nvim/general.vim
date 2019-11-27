@@ -6,6 +6,9 @@
 " Enconding!
 set encoding=utf8
 
+" NERDTreeWinSize
+:let g:NERDTreeWinSize=60
+
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow splitright
 

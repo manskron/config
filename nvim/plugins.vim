@@ -70,6 +70,9 @@ Plug 'pangloss/vim-javascript'
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
 
+" Syntax highlighting for styled components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 " === Syntax Highlighting === "
 
 " Improved syntax highlighting and indentation
@@ -80,6 +83,7 @@ Plug 'othree/yajs.vim'
 Plug 'scrooloose/nerdtree'
 
 " Colorschemes
+Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'xero/blaquemagick.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -87,6 +91,8 @@ Plug 'jaredgorski/SpaceCamp'
 Plug 'ntk148v/vim-horizon'
 Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim/'
+Plug 'ayu-theme/ayu-vim'
+Plug 'dracula/vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
