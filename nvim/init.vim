@@ -85,7 +85,6 @@ Plug 'othree/yajs.vim'
 Plug 'scrooloose/nerdtree'
 
 " Colorschemes
-Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'xero/blaquemagick.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -95,6 +94,7 @@ Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim/'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
@@ -108,6 +108,9 @@ Plug 'junegunn/goyo.vim'
 
 " ======= RUST ======= "
 Plug 'rust-lang/rust.vim'
+
+" ======= VimWIKI ======= "
+Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -301,6 +304,8 @@ set shortmess+=c
 set exrc
 set secure
 
+set wrap
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -309,23 +314,8 @@ set secure
 " Editor theme
 let &t_ut=''
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
-
-" Add custom highlights in method that is executed every time a
-" colorscheme is sourced
-" See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for
-" details
-" function! MyHighlights() abort
-"   " Hightlight trailing whitespace
-"   highlight Trail ctermbg=red guibg=red
-"   call matchadd('Trail', '\s\+$', 100)
-" endfunction
-
-" augroup MyColors
-"   autocmd!
-"   autocmd ColorScheme * call MyHighlights()
-" augroup END
+" let ayucolor="dark"
+colorscheme tempus_totus
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -340,55 +330,6 @@ set noshowmode
 hi! link CocErrorSign WarningMsg
 hi! link CocWarningSign Number
 hi! link CocInfoSign Type
-
-" Make background transparent for many things
-" hi! Normal ctermbg=NONE guibg=NONE
-" hi! NonText ctermbg=NONE guibg=NONE
-" hi! LineNr ctermfg=NONE guibg=NONE
-" hi! SignColumn ctermfg=NONE guibg=NONE
-" hi! StatusLine guifg=#16252b guibg=#6699CC
-" hi! StatusLineNC guifg=#16252b guibg=#16252b
-
-" Try to hide vertical spit and end of buffer symbol
-" hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
-" hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
-
-" " Customize NERDTree directory
-" hi! NERDTreeCWD guifg=#99c794
-
-" " Make background color transparent for git changes
-" hi! SignifySignAdd guibg=#000000
-" hi! SignifySignDelete guibg=#000000
-" hi! SignifySignChange guibg=#000000
-
-" " Highlight git change signs
-" hi! SignifySignAdd guifg=#99c794
-" hi! SignifySignDelete guifg=#ec5f67
-" hi! SignifySignChange guifg=#c594c5
-
-" "  Keeps git gutter clear
-" highlight clear SignColumn
-" highlight GitGutterAdd ctermfg=green ctermbg=0
-" highlight GitGutterChange ctermfg=yellow ctermbg=0
-" highlight GitGutterDelete ctermfg=red ctermbg=0
-" highlight GitGutterChangeDelete ctermfg=red ctermbg=0
-" hi EndOfBuffer  term=NONE cterm=NONE ctermfg=238  ctermbg=NONE
-" hi SpellBad     term=NONE cterm=NONE ctermfg=103  ctermbg=NONE
-" hi SpellCap     term=NONE cterm=NONE ctermfg=66   ctermbg=NONE
-" hi Whitespace   term=NONE cterm=NONE ctermfg=234  ctermbg=235
-
-" " Call method on window enter
-" augroup WindowManagement
-"   autocmd!
-"   autocmd WinEnter * call Handle_Win_Enter()
-" augroup END
-
-" " Change highlight group of preview window when open
-" function! Handle_Win_Enter()
-"   if &previewwindow
-"     setlocal winhighlight=Normal:MarkdownError
-"   endif
-" endfunction
 
 " ============================================================================ "
 " ===                        ⌨️  KEY MAPPINGS ⌨️                             === "
@@ -405,13 +346,38 @@ cmap w!! w !sudo tee %
 " Remap leader key to <space>
 let g:mapleader=' '
 
+"Coc
 " <leader>f runs prettier on selection
 " vmap <leader>f  <Plug>(coc-format-selected)
 " nmap <leader>f  <Plug>(coc-format-selected)
 vmap <leader>p  :CocCommand prettier.formatFile<CR>
 nmap <leader>p  :CocCommand prettier.formatFile<CR>
+"
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" <leader>f to quit
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"
+" Coc snippets jump with TAB
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+"<leader>q to quit
 map <leader>q :q<CR>
 
 " / to generate new vertical split
@@ -554,6 +520,7 @@ set autoread
 
 " Relative line numbers
 set relativenumber
+set number
 
 " Set backups
 if has('persistent_undo')

@@ -1,3 +1,6 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "create-next-app": "^9.4.4",
+    "expo-cli": "^3.21.3"
+  }
 }
