@@ -35,10 +35,6 @@ Plug 'rstacruz/vim-closer'
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
-" Intellisense Engine
-" Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -59,26 +55,6 @@ Plug 'tpope/vim-surround'
 " Enable git changes to be shown in sign column
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-
-" ReactJS JSX syntax highlighting
-Plug 'maxmellon/vim-jsx-pretty'
-
-" JSDoc
-Plug 'heavenshell/vim-jsdoc'
-
-" Improved Javascript Highlighting
-Plug 'pangloss/vim-javascript'
-
-" Generate JSDoc commands based on function signature
-Plug 'heavenshell/vim-jsdoc'
-
-" Syntax highlighting for styled components
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-" === Syntax Highlighting === "
-
-" Improved syntax highlighting and indentation
-Plug 'othree/yajs.vim'
 
 " === UI === "
 " File explorer
@@ -187,21 +163,6 @@ catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
-" === Coc.nvim === "
-" use <tab> for trigger completion and navigate to next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-"Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -231,17 +192,6 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 " === echodoc === "
 " Enable echodoc on startup
 let g:echodoc#enable_at_startup = 1
-
-" === vim-javascript === "
-" Enable syntax highlighting for JSDoc
-let g:javascript_plugin_jsdoc = 1
-
-" === vim-jsx === "
-" Highlight jsx syntax even in non .jsx files
-let g:jsx_ext_required = 0
-
-" === javascript-libraries-syntax === "
-let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
 " === Signify === "
 let g:signify_sign_delete = '-'
@@ -324,12 +274,7 @@ set fillchars+=vert:.
 set splitbelow
 
 " Don't dispay mode in command line (airilne already shows it)
-set noshowmode
-
-" coc.nvim color changes
-hi! link CocErrorSign WarningMsg
-hi! link CocWarningSign Number
-hi! link CocInfoSign Type
+" set noshowmode
 
 " ============================================================================ "
 " ===                        ⌨️  KEY MAPPINGS ⌨️                             === "
@@ -345,37 +290,6 @@ cmap w!! w !sudo tee %
 
 " Remap leader key to <space>
 let g:mapleader=' '
-
-"Coc
-" <leader>f runs prettier on selection
-" vmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-vmap <leader>p  :CocCommand prettier.formatFile<CR>
-nmap <leader>p  :CocCommand prettier.formatFile<CR>
-"
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-"
-" Coc snippets jump with TAB
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
 
 "<leader>q to quit
 map <leader>q :q<CR>
@@ -474,11 +388,6 @@ endfunction
 "  <leader>f - Opens current file location in NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
-
-" === coc.nvim === "
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
